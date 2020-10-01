@@ -45,7 +45,7 @@ Names are not as standardized as phone numbers and email addresses, so identifyi
 ```java
 String nameRegex = "^([A-Z][a-zA-Z-']+)((\\s[A-Z]([a-zA-Z-']+|\\.))|)\\s([A-Z][a-zA-Z-']+)$";
 ```
-This regular expression represents a first name followed by an optional middle name or initial and ended by a last name. Additionally, if a line matches the regular expression, then each word in the line is checked for containment in in this exhaustive [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that is generally organized by commonality in decreasing order. The following algorithm is used when identifying a name: 
+This regular expression represents a first name followed by an optional middle name or initial and ended by a last name. Additionally, if a line matches the regular expression, then each word in the line is checked for containment in in this [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that contains around 18,000 names and is generally organized by commonality in decreasing order. The following algorithm is used when identifying a name: 
 ``` PROGRAM
 def find_name():
 	possible_name = ""
@@ -59,3 +59,4 @@ def find_name():
 	return possible_name
 	
 ```
+The algorithm takes into account that not all names are in the list by returning a line that matches the regular expression but is not contained in the list if a line that does not satisfy both conditions is not found. 
