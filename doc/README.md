@@ -1,8 +1,9 @@
 # Table of Contents
 - [Implementation Choices](#ImplementChoice)
   - [Solution Approach](##Approach)
-  - [Identifying Phone Number and Email Address](##PhoneEmail)
-  - [Identifying Name](##Name)
+  - [Identification](#Identification)
+  	- [Identifying Phone Number and Email Address](###PhoneEmail)
+  	- [Identifying Name](###Name)
 - [Referenced Resources](#Resources)
 
 # Implementation Choices
@@ -16,17 +17,25 @@ Before I began programming, I considered two possible approaches to this problem
   - **Disadvantages**: There is a higher chance of misidentification if the methods for identification are either too restrictive or not restrictive enough. 
 
 I chose to use the **Single Pass Identification** approach as the advantages are very applicable to the context of a consumer application as well as for limiting future maintence. Additionally, the disadvantages could be address during the development of the application. 
-
-## Identifying Phone Number and Email Address
-I decided to identify if a line of a business card was a phone number using purely regular expressions. 
-- **Phone Number**: Since phone numbers have so many possible formats, I decided to find a comprehensive regular expression for phone numbers and edit it for the context of a business card. I started with the regular expression found [here](https://www.baeldung.com/java-regex-validate-phone-numbers) and then modified it as follows: 
+## Identification
+In this section, I outline the process of identifying names, phone numbers and email addresses. The choices for how they would be identified was informed by referencing several business cards from diverse backgrounds. The many possible formats for each category being considered was taken into account accordingly. 
+### Identifying Phone Number and Email Address
+Since phone numbers and email addresses have so many possible yet standardized formats, I used a regular expression to identify them. 
+- **Phone Number**: I found a comprehensive regular expression for phone numbers and modified it for the context of a business card. I started with the regular expression found [here](https://www.baeldung.com/java-regex-validate-phone-numbers) and modified it as follows: 
 ```java
-private static final String phoneNumberRegex = 
-			"^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}(\\s*(phone|Phone|cell|Cell|))$" 
-			+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}(\\s*(phone|Phone|cell|Cell|))$" 
-			+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}(\\s*(phone|Phone|cell|Cell|))$";
+String phoneNumberRegex = 
+	"^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}(\\s*(phone|Phone|cell|Cell|))$" 
+	+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}(\\s*(phone|Phone|cell|Cell|))$" 
+	+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}(\\s*(phone|Phone|cell|Cell|))$";
 	
 ```
+Each line of the regular expression represents an optional label followed by a possible format for a phone number and ending with an optional label. 
 
+- **Email Address**: Similarly, after researching what characters are typically allowed in an emai address, I wrote a regular expression to identify them as follows: 
+```java
+pString emailAddressRegex = "^(Email(:|\\||)|)\\s*([\\w\\-]+\\.*[\\w\\-]+)@([\\w\\-]+)((\\.(\\w){2,})+)$";
+
+```
+This regular expression checks for an optional _Email_ label followed by an email.
 ## Identifying Name
 # Referenced Resources
