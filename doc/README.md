@@ -48,10 +48,14 @@ String nameRegex = "^([A-Z][a-zA-Z-']+)((\\s[A-Z]([a-zA-Z-']+|\\.))|)\\s([A-Z][a
 This regular expression represents a first name followed by an optional middle name or initial and ended by a last name. Additionally, if a line matches the regular expression, then each word in the line is checked for containment in in this exhaustive [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that is generally organized by commonality in decreasing order. The following algorithm is used when identifying a name: 
 ``` PROGRAM
 def find_name():
+	possible_name = ""
 	for each line in the business card:
 		if the line matches the above regular expression
 			for each word in the line
 				if the word is contained in the name list
-					name = line
-			possible_name = line
+					return name
+			if we have not found a possible_name
+				possible_name = line
+	return possible_name
+	
 ```
