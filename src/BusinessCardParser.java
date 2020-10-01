@@ -35,10 +35,11 @@ public class BusinessCardParser {
 	 * Regular expression that represents many possible formats of a phone number
 	 */
 	private static final String phoneNumberRegex = 
-			"^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}(\\s*(phone|Phone|cell|Cell|))$" 
-			+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}(\\s*(phone|Phone|cell|Cell|))$" 
-			+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}(\\s*(phone|Phone|cell|Cell|))$";
-	
+					"^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*"
+					+"((\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
+					+ "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$" 
+					+ "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2})$"
+					+ "(\\s*(phone|Phone|cell|Cell|))$";
 	/**
 	 * Regular expression that represents many possible formats of an email address
 	 */
@@ -306,18 +307,4 @@ public class BusinessCardParser {
 		// Return just the email address
 		return emailAddress.substring(start, end);
 	}
-	
-	// --- Notes ---
-	// Phone number and email address can be matched via regular expressions
-	// If checking for name myself...
-	//    - Check if there is a title (Doctor, professor, mr, ms/mrs
-	//    - Check for suffix number, senior, junior
-	//    - Check for middle initial (letter or letter.)
-	//    - Check if words are not in dictionary
-	//    - Create flags for other data
-	// If relying on outside data, check if name is in list of names
-	
-	// Resources
-	// phone number matching - https://www.baeldung.com/java-regex-validate-phone-numbers
-	// list of names - https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html
 }
