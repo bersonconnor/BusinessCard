@@ -45,16 +45,13 @@ Names are not as standardized as phone numbers and email addresses, so identifyi
 ```java
 String nameRegex = "^([A-Z][a-zA-Z-']+)((\\s[A-Z]([a-zA-Z-']+|\\.))|)\\s([A-Z][a-zA-Z-']+)$";
 ```
-This regular expression represents a first name followed by an optional middle name or initial and ended by a last name. The following algorithm is used when identifying a name: 
+This regular expression represents a first name followed by an optional middle name or initial and ended by a last name. Additionally, if a line matches the regular expression, then each word in the line is checked for containment in in this exhaustive [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that is generally organized by commonality in decreasing order. The following algorithm is used when identifying a name: 
 ``` PROGRAM
-If the line matches the above regular expression
-	For each word in the line
-		If the word is contained in this exhaustive [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that is generally organized by commonality in decreasing order
-			Return line as name
-	Store the line as a possible name
+def find_name():
+	for each line in the business card:
+		if the line matches the above regular expression
+			for each word in the line
+				if the word is contained in the name list
+					name = line
+			possible_name = line
 ```
-- If the line matches the above regular expression, then each word in the line is checked for containment in this exhaustive [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that is generally organized by commonality in decreasing order. 
-	- If at least one word from the line is in the list, then that line is chosen as the name for the contact information. 
-	- Otherwise, if no words from the line are contained within the list, then we store the line and continue searching for a name. 
-- If a line that matches the regular expression and is contained in the list is found, we return it 
-- Otherwise, if a line that matches the regular expression and is contained in the list is not found and there we select it as the name for the contact information. 
