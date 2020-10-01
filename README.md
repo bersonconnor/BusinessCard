@@ -24,7 +24,7 @@ How to download, setup, and run the project
 # Usage
 How to use the command line application 
 ## Main Menu
-- Enter 1, 2, or 3 to manually input business card text, provide a business card text file, or run examples.
+- Enter 1, 2, or 3 to manually input business card text, provide a business card text file, or run examples respectivelly
 - Enter 4 or exit to exit the command line application
 ## Manual Input
 - Enter each line of the business card text separated by a new line
