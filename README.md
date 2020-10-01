@@ -2,12 +2,12 @@
 Asymmetrik Business Card Scanner Challenge Problem
 
 # Table of Contents
--[Project Setup](#ProjectSetup)
--[Usage](#Usage)
-  -[Main Menu](##MainMenu)
-  -[Manual Input](##Manual)
-  -[Provide Text File](##TextFile)
-  -[Run Examples](##Example)
+- [Project Setup](#ProjectSetup)
+- [Usage](#Usage)
+  - [Main Menu](##MainMenu)
+  - [Manual Input](##Manual)
+  - [Provide Text File](##TextFile)
+  - [Run Examples](##Example)
 
 # Project Setup
 - Run `git clone <url>` where `<url>` is the url of the GitHub project
