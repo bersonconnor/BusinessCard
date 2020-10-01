@@ -4,6 +4,7 @@
   - [Identification](#Identification)
   	- [Identifying Phone Number and Email Address](###PhoneEmail)
   	- [Identifying Name](###Name)
+- [Testing](#Testing)
 
 # Implementation Choices
 ## Solution Approach
@@ -60,3 +61,6 @@ def find_name():
 	
 ```
 The algorithm takes into account that not all names are in the list by returning a line that matches the regular expression but is not contained in the list if a line that does not satisfy both conditions is not found. 
+
+# Testing
+Testing of the application was completed by manually running odd/difficult examples, the three provided examples, and six more real business card examples. The provided examples and real business card examples can be found in text files [here](https://github.com/bersonconnor/BusinessCard/edit/master/src/example). 
