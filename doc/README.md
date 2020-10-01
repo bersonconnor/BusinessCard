@@ -16,6 +16,13 @@ Before I began programming, I considered two possible approaches to this problem
   - **Disadvantages**: There is a higher chance of misidentification if the methods for identification are either too restrictive or not restrictive enough. 
 
 I chose to use the **Single Pass Identification** approach as the advantages are very applicable to the context of a consumer application as well as for limiting future maintence. Additionally, the disadvantages could be address during the development of the application. 
+
 ## Identifying Phone Number and Email Address
+I decided to identify if a line of a business card was a phone number using purely regular expressions. 
+- **Phone Number**: Since phone numbers have so many possible formats, I decided to find a comprehensive regular expression for phone numbers and edit it for the context of a business card. I started with the regular expression found [here](https://www.baeldung.com/java-regex-validate-phone-numbers) and then modified it as follows: 
+```java
+int one = 2;
+```
+
 ## Identifying Name
 # Referenced Resources
