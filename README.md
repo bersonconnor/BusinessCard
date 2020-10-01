@@ -38,11 +38,11 @@ How to use the command line application
 - Enter exit to return to the [Main Menu](##MainMenu)
 
 # Folder Structure
-## src
+## [src](https://github.com/bersonconnor/BusinessCard/tree/master/src)
 - Contains all code related to the application
-- Contains 'run.sh' for setting up the project
-- Contains example folder that contains compatible business card text files
-## doc
+- Contains [run.sh](https://github.com/bersonconnor/BusinessCard/tree/master/src/run.sh) for setting up the project
+- Contains [example](https://github.com/bersonconnor/BusinessCard/tree/master/src/example) folder that contains compatible business card text files
+## [doc](https://github.com/bersonconnor/BusinessCard/tree/master/doc)
 - Contains [javadoc](https://github.com/bersonconnor/BusinessCard/tree/master/doc/javadoc) folder
   - Javadocs that end with **\_private** include all methods and fields 
   - Javadocs named directly after their corresponding java file only contain public methods and fields
