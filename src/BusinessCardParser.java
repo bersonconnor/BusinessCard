@@ -35,11 +35,10 @@ public class BusinessCardParser {
 	 * Regular expression that represents many possible formats of a phone number
 	 */
 	private static final String phoneNumberRegex = 
-					"^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*"
-					+"((\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
-					+ "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$" 
-					+ "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2})$"
-					+ "(\\s*(phone|Phone|cell|Cell|))$";
+			"^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}(\\s*(phone|Phone|cell|Cell|))$" 
+			+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}(\\s*(phone|Phone|cell|Cell|))$" 
+			+ "|^(Phone|Tel|Telephone|Cell|Cellphone|Cellular|Cell-phone|Cell Phone|Cell phone|Mobile|Mobile Phone|)\\s*(:|\\||)\\s*(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}(\\s*(phone|Phone|cell|Cell|))$";
+	
 	/**
 	 * Regular expression that represents many possible formats of an email address
 	 */
