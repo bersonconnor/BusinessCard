@@ -2,14 +2,14 @@
 Asymmetrik Business Card Scanner Challenge Problem
 
 # Table of Contents
-- [Project Setup](#ProjectSetup)
-- [Necessary Software](#Software)
+- [Project Setup](#Project Setup)
+- [Necessary Software](#Necessary Software)
 - [Usage](#Usage)
-  - [Main Menu](##MainMenu)
-  - [Manual Input](##Manual)
-  - [Provide Text File](##TextFile)
-  - [Run Examples](##Example)
- - [Folder Structure](#FolderStructure)
+  - [Main Menu](##Main Menu)
+  - [Manual Input](##Manual Input)
+  - [Provide Text File](##Provide Text File)
+  - [Run Examples](##Run Examples)
+- [Folder Structure](#Folder Structure)
 
 # Necessary Software
 - JDK and a java compiler 
