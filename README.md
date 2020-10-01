@@ -44,7 +44,7 @@ How to use the command line application
 - Contains [example](https://github.com/bersonconnor/BusinessCard/tree/master/src/example) folder that contains compatible business card text files
 ## [doc](https://github.com/bersonconnor/BusinessCard/tree/master/doc)
 - Contains [javadoc](https://github.com/bersonconnor/BusinessCard/tree/master/doc/javadoc) folder
-  - Javadocs that end with **\_private** include all methods and fields 
+  - Javadocs that end with **\_All** include all methods and fields 
   - Javadocs named directly after their corresponding java file only contain public methods and fields
 - The [README.md](https://github.com/bersonconnor/BusinessCard/tree/master/doc/javadoc/README.md) file in this folder provides all other documentation
 
