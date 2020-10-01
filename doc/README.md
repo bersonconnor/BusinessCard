@@ -17,7 +17,7 @@ Before I began programming, I considered two possible approaches to this problem
 
 I chose to use the **Single Pass Identification** approach as the advantages are very applicable to the context of a consumer application as well as for limiting future maintence. Additionally, the disadvantages could be address during the development of the application. 
 ## Identification
-In this section, I outline the process of identifying names, phone numbers and email addresses. The choices for how they would be identified was informed by referencing several business cards from diverse backgrounds. The many possible formats for each category being considered was taken into account accordingly. 
+In this section, I outline the process of identifying names, phone numbers and email addresses. The choices for how they would be identified was informed by referencing several business cards from diverse backgrounds. The many possible formats for each category being considered was taken into account accordingly. The relevant code is located [here](https://github.com/bersonconnor/BusinessCard/edit/master/src/BusinessCardParser.java).
 ### Identifying Phone Number and Email Address
 Since phone numbers and email addresses have so many possible yet standardized formats, I used a regular expression to identify them. 
 - **Phone Number**: I found a comprehensive regular expression for phone numbers and modified it for the context of a business card. I started with the regular expression found [here](https://www.baeldung.com/java-regex-validate-phone-numbers) and modified it as follows: 
