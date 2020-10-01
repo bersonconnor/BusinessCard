@@ -1,7 +1,7 @@
 # Table of Contents
 - [Implementation Choices](#ImplementChoice)
   - [Solution Approach](##Approach)
-  - [Identification](#Identification)
+  - [Identification](##Identification)
   	- [Identifying Phone Number and Email Address](###PhoneEmail)
   	- [Identifying Name](###Name)
 - [Testing](#Testing)
