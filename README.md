@@ -2,8 +2,8 @@
 Asymmetrik Business Card Scanner Challenge Problem
 
 # Table of Contents
-- [Project Setup](#ProjectSetup)
 - [Necessary Software](#NecessarySoftware)
+- [Project Setup](#ProjectSetup)
 - [Usage](#Usage)
   - [Main Menu](##MainMenu)
   - [Manual Input](##ManualInput)
@@ -11,33 +11,33 @@ Asymmetrik Business Card Scanner Challenge Problem
   - [Run Examples](##RunExamples)
 - [Folder Structure](#FolderStructure)
 
-# Necessary Software<a name="ProjectSetup"></a>
+# Necessary Software<a name="NecessarySoftware"></a>
 - JDK and a java compiler 
 - This application builds from a Bash-compatible console
 
-# Project Setup<a name="NecessarySoftware"></a>
+# Project Setup<a name="ProjectSetup"></a>
 How to download, setup, and run the project
 - Run `git clone <url>` where `<url>` is the url of the GitHub project
 - Navigate to the [BusinessCard/src](https://github.com/bersonconnor/BusinessCard/tree/master/src) directory in the command line
 - Run ```shell sh run.sh``` to compile all java files and run the command line application
 
-# Usage
+# Usage<a name="Usage"></a>
 How to use the command line application 
-## Main Menu
+## Main Menu<a name="MainMenu"></a>
 - Enter 1, 2, or 3 to manually input business card text, provide a business card text file, or run examples respectivelly
 - Enter 4 or exit to exit the command line application
-## Manual Input
+## Manual Input<a name="ManualInput"></a>
 - Enter each line of the business card text separated by a new line
 - Enter **done** and then press enter once you have finished entering the business card text
 - After the results are printed, the program will return to the [Main Menu](##MainMenu)
-## Provide Text File
+## Provide Text File<a name="ProvideTextFile"></a>
 - Enter the **full path** of the text file that you would like to parse
 - Enter exit to return to the [Main Menu](##MainMenu)
-## Run Examples
+## Run Examples<a name="RunExamples"></a>
 - Enter any number between and including the provided minimum and maximum example numbers
 - Enter exit to return to the [Main Menu](##MainMenu)
 
-# Folder Structure
+# Folder Structure<a name="FolderStructure"></a>
 ## [src](https://github.com/bersonconnor/BusinessCard/tree/master/src)
 - Contains all code related to the application
 - Contains [run.sh](https://github.com/bersonconnor/BusinessCard/tree/master/src/run.sh) for setting up the project
