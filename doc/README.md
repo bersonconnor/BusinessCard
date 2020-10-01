@@ -33,7 +33,7 @@ Each line of the regular expression represents an optional label followed by a p
 
 - **Email Address**: Similarly, after researching what characters are typically allowed in an emai address, I wrote a regular expression to identify them as follows: 
 ```java
-pString emailAddressRegex = "^(Email(:|\\||)|)\\s*([\\w\\-]+\\.*[\\w\\-]+)@([\\w\\-]+)((\\.(\\w){2,})+)$";
+String emailAddressRegex = "^(Email(:|\\||)|)\\s*([\\w\\-]+\\.*[\\w\\-]+)@([\\w\\-]+)((\\.(\\w){2,})+)$";
 
 ```
 This regular expression checks for an optional _Email_ label followed by an email.
