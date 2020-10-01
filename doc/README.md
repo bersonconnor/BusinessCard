@@ -40,4 +40,8 @@ String emailAddressRegex = "^(Email(:|\\||)|)\\s*([\\w\\-]+\\.*[\\w\\-]+)@([\\w\
 ```
 This regular expression checks for an optional _Email_ label followed by an email.
 ## Identifying Name
+Names are not as standardized as phone numbers and email addresses, so identifying them required a more complex solution. I implemented both of the following approaches and decided to use the latter: 
+- **Natural Language Processing (NLP)**: NLP is a field concerned with analyzing human language with a computer. My NLP implemention used [Stanford's Named Entity Recognizer (NER)](https://nlp.stanford.edu/software/CRF-NER.html). In this implementation, I would feed the NER a line of a given business card. If any of the words were identified as `/PERSON`, then that line was be stored as the name of that card. The issue with the implementation came from 2 limitations of NLP. Generally, NLP uses context such as grammar to identify a given word. Since a business card is made of fragments, there is no context. As a result, though it was rare, misidentifications occurred. Additionally, NLP is not quick process, so using NER slowed the performance of my implementation significantly. 
+- **Regular Expression Matching and List Existence**:
+
 # Referenced Resources
