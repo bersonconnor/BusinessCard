@@ -14,6 +14,7 @@ Before I began programming, I considered two possible approaches to this problem
 - **Single Pass Identification**: Each line of a given business card text would be viewed once. If it matches a name, phone number, or email address, it would be selected for the respective category as output. Even if another line after the selected line also would identify as the same category, it will not be considered or selected for that category. 
   - **Advantages**: This approach has obvious speed benefits as it evaluates the text during a single pass. Furthermore, once the methods for identificaiton are determined, even if it is decided later that other additional parts of a business card would also be parsed, they do not need to be adjusted. 
   - **Disadvantages**: There is a higher chance of misidentification if the methods for identification are either too restrictive or not restrictive enough. 
+
 I chose to use the **Single Pass Identification** approach as the advantages are very applicable to the context of a consumer application as well as for limiting future maintence. Additionally, the disadvantages could be address during the development of the application. 
 ## Identifying Phone Number and Email Address
 ## Identifying Name
