@@ -8,7 +8,6 @@ Asymmetrik Business Card Scanner Challenge Problem
   -[Manual Input](##Manual)
   -[Provide Text File](##TextFile)
   -[Run Examples](##Example)
-  -[Exit][(##Exit)
 
 # Project Setup
 - Run `git clone <url>` where `<url>` is the url of the GitHub project
