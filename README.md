@@ -3,12 +3,17 @@ Asymmetrik Business Card Scanner Challenge Problem
 
 # Table of Contents
 - [Project Setup](#ProjectSetup)
+- [Necessary Software](#Software)
 - [Usage](#Usage)
   - [Main Menu](##MainMenu)
   - [Manual Input](##Manual)
   - [Provide Text File](##TextFile)
   - [Run Examples](##Example)
  - [Folder Structure](#FolderStructure)
+
+# Necessary Software
+- JDK and a java compiler 
+- This application builds from a Bash-compatible console
 
 # Project Setup
 How to download, setup, and run the project
@@ -38,8 +43,9 @@ How to use the command line application
 - Contains 'run.sh' for setting up the project
 - Contains example folder that contains compatible business card text files
 ## doc
-- Contains javadoc folder
+- Contains [javadoc] folder
   - Javadocs that end with **\_private** include all methods and fields 
   - Javadocs named directly after their corresponding java file only contain public methods and fields
+- The [README.md] file in this folder provides all other documentation
 
 
