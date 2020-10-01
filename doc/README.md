@@ -6,8 +6,8 @@
   	- [Identifying Name](###Name)
 - [Testing](#Testing)
 
-# Implementation Choices
-## Solution Approach
+# Implementation Choices<a name="ImplementChoice"></a>
+## Solution Approach<a name="Approach"></a>
 Before I began programming, I considered two possible approaches to this problem:
 - **Point System**: Each line of a given business card text would be awarded points for it's likeness to a name, a phone number, and a email address. The line that had the highest number of points for name, phone number, and email address would each be selected for the respective category as output. 
   - **Advantages**: If the business card scanning application decided to also grab other parts of the card as part of the contact information, the new parts could be easily integrated into the point system after determining how to evaluate likeness of them. The application could also be extremely accurate in identifying what type of data each line is.
@@ -17,9 +17,9 @@ Before I began programming, I considered two possible approaches to this problem
   - **Disadvantages**: There is a higher chance of misidentification if the methods for identification are either too restrictive or not restrictive enough. 
 
 I chose to use the **Single Pass Identification** approach as the advantages are very applicable to the context of a consumer application as well as for limiting future maintence. Additionally, the disadvantages could be address during the development of the application. 
-## Identification
+## Identification<a name="Identification"></a>
 In this section, I outline the process of identifying names, phone numbers and email addresses. The choices for how they would be identified was informed by referencing several business cards from diverse backgrounds. The many possible formats for each category being considered was taken into account accordingly. The relevant code is located [here](https://github.com/bersonconnor/BusinessCard/edit/master/src/BusinessCardParser.java).
-### Identifying Phone Number and Email Address
+### Identifying Phone Number and Email Address<a name="PhoneEmail"></a>
 Since phone numbers and email addresses have so many possible yet standardized formats, I used a regular expression to identify them. 
 - **Phone Number**: I found a comprehensive regular expression for phone numbers and modified it for the context of a business card. I started with the regular expression found [here](https://www.baeldung.com/java-regex-validate-phone-numbers) and modified it as follows: 
 ```java
@@ -39,7 +39,7 @@ String emailAddressRegex = "^(Email(:|\\||)|)\\s*([\\w\\-]+\\.*[\\w\\-]+)@([\\w\
 
 ```
 This regular expression represents an optional _Email_ label followed by an email address.
-### Identifying Names
+### Identifying Names<a name="Name"></a>
 Names are not as standardized as phone numbers and email addresses, so identifying them required a more complex solution. I implemented both of the following approaches and decided to use the latter: 
 - **Natural Language Processing (NLP)**: NLP is a field concerned with analyzing human language with a computer. My NLP implemention used [Stanford's Named Entity Recognizer (NER)](https://nlp.stanford.edu/software/CRF-NER.html). In this implementation, I would feed the NER a line of a given business card. If any of the words were identified as `/PERSON`, then that line was be stored as the name of that card. The issue with the implementation came from 2 limitations of NLP. Generally, NLP uses context such as grammar to identify a given word. Since a business card is made of fragments, there is no context. As a result, though it was rare, misidentifications occurred. Additionally, NLP is not quick process, so using NER slowed the performance of my implementation significantly. 
 - **Regular Expression Matching and List Existence**: In this implementation, each line of a given business card is matched to the following regular expression: 
@@ -62,5 +62,5 @@ def find_name():
 ```
 The algorithm takes into account that not all names are in the list by returning a line that matches the regular expression but is not contained in the list if a line that does not satisfy both conditions is not found. 
 
-# Testing
+# Testing<a name="Testing"></a>
 Testing of the application was completed by manually running odd/difficult examples, the three provided examples, and six more real business card examples. The provided examples and real business card examples can be found in text files [here](https://github.com/bersonconnor/BusinessCard/edit/master/src/example). 
