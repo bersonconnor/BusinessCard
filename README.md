@@ -18,7 +18,7 @@ Asymmetrik Business Card Scanner Challenge Problem
 # Project Setup
 How to download, setup, and run the project
 - Run `git clone <url>` where `<url>` is the url of the GitHub project
-- Navigate to the **BusinessCard/src** directory in the command line
+- Navigate to the [BusinessCard/src](https://github.com/bersonconnor/BusinessCard/tree/master/src) directory in the command line
 - Run ```shell sh run.sh``` to compile all java files and run the command line application
 
 # Usage
@@ -43,9 +43,9 @@ How to use the command line application
 - Contains 'run.sh' for setting up the project
 - Contains example folder that contains compatible business card text files
 ## doc
-- Contains [javadoc] folder
+- Contains [javadoc](https://github.com/bersonconnor/BusinessCard/tree/master/doc/javadoc) folder
   - Javadocs that end with **\_private** include all methods and fields 
   - Javadocs named directly after their corresponding java file only contain public methods and fields
-- The [README.md] file in this folder provides all other documentation
+- The [README.md](https://github.com/bersonconnor/BusinessCard/tree/master/doc/javadoc/README.md) file in this folder provides all other documentation
 
 
