@@ -11,11 +11,11 @@ Asymmetrik Business Card Scanner Challenge Problem
   - [Run Examples](##RunExamples)
 - [Folder Structure](#FolderStructure)
 
-# Necessary Software
+# Necessary Software<a name="ProjectSetup"></a>
 - JDK and a java compiler 
 - This application builds from a Bash-compatible console
 
-# Project Setup
+# Project Setup<a name="NecessarySoftware"></a>
 How to download, setup, and run the project
 - Run `git clone <url>` where `<url>` is the url of the GitHub project
 - Navigate to the [BusinessCard/src](https://github.com/bersonconnor/BusinessCard/tree/master/src) directory in the command line
