@@ -4,7 +4,6 @@
   - [Identification](#Identification)
   	- [Identifying Phone Number and Email Address](###PhoneEmail)
   	- [Identifying Name](###Name)
-- [Referenced Resources](#Resources)
 
 # Implementation Choices
 ## Solution Approach
@@ -38,10 +37,12 @@ Each line of the regular expression represents an optional label followed by a p
 String emailAddressRegex = "^(Email(:|\\||)|)\\s*([\\w\\-]+\\.*[\\w\\-]+)@([\\w\\-]+)((\\.(\\w){2,})+)$";
 
 ```
-This regular expression checks for an optional _Email_ label followed by an email.
+This regular expression represents an optional _Email_ label followed by an email address.
 ## Identifying Name
 Names are not as standardized as phone numbers and email addresses, so identifying them required a more complex solution. I implemented both of the following approaches and decided to use the latter: 
 - **Natural Language Processing (NLP)**: NLP is a field concerned with analyzing human language with a computer. My NLP implemention used [Stanford's Named Entity Recognizer (NER)](https://nlp.stanford.edu/software/CRF-NER.html). In this implementation, I would feed the NER a line of a given business card. If any of the words were identified as `/PERSON`, then that line was be stored as the name of that card. The issue with the implementation came from 2 limitations of NLP. Generally, NLP uses context such as grammar to identify a given word. Since a business card is made of fragments, there is no context. As a result, though it was rare, misidentifications occurred. Additionally, NLP is not quick process, so using NER slowed the performance of my implementation significantly. 
-- **Regular Expression Matching and List Existence**:
-
-# Referenced Resources
+- **Regular Expression Matching and List Existence**: In this implementation, each line of a given business card is matched to the following regular expression: 
+```java
+String nameRegex = "^([A-Z][a-zA-Z-']+)((\\s[A-Z]([a-zA-Z-']+|\\.))|)\\s([A-Z][a-zA-Z-']+)$";
+```
+This regular expression represents a first name followed by an optional middle name or initial ane ended by a last name. If the line matches the regular expression, then the first, middle, and last name are checked for containment in this exhaustive [list of names](https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html) that is generally organized by commonality in decreasing order. If at least one part of the line is in the list, then that line is chosen as the name for the contact information. If no parts of the line are contained within the list, then we store the line and continue searching for a name. If at the end of the search, a line that matches the regular expression and is contained in the list is not found, if there is a line stored because it only passed the regular expression, we select it as the name for the contact information. 
